@@ -1,4 +1,3 @@
-
 package all_in_one;
 
 import java.awt.*;
@@ -6,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Stop_watch extends JFrame implements ActionListener {
+
     private JLabel timeLabel;
     private JButton startButton, stopButton, resetButton;
     private Timer timer;
@@ -63,5 +63,4 @@ public class Stop_watch extends JFrame implements ActionListener {
         timeLabel.setText(time);
     }
 
-    
 }

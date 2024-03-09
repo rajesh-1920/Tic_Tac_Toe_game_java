@@ -23,6 +23,10 @@ class active_project extends JFrame {
         Calculator1 calc = new Calculator1();
     }
 
+    void run_car() {
+        Rent_a_car calc = new Rent_a_car();
+    }
+
     void run_game() {
         java.awt.EventQueue.invokeLater(() -> {
             new Tic_Tac_Toe().setVisible(true);
