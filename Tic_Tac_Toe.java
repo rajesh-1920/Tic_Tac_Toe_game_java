@@ -14,6 +14,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private String stgame = "X";
     private int xcount = 0;
     private int ocount = 0;
+    private int click_count = 0;
 
     public Tic_Tac_Toe() {
         initComponents();
@@ -33,6 +34,8 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     }
 
     private void clear() {
+        click_count = 0;
+        stgame = "X";
         t1.setText(null);
         t2.setText(null);
         t3.setText(null);
@@ -84,6 +87,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b4) && "X".equals(b5) && "X".equals(b6)) {
 
@@ -97,6 +101,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b7) && "X".equals(b8) && "X".equals(b9)) {
 
@@ -110,6 +115,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b1) && "X".equals(b4) && "X".equals(b7)) {
             xcount++;
@@ -122,6 +128,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b2) && "X".equals(b5) && "X".equals(b8)) {
 
@@ -135,6 +142,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b3) && "X".equals(b6) && "X".equals(b9)) {
 
@@ -148,6 +156,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b1) && "X".equals(b5) && "X".equals(b9)) {
 
@@ -161,6 +170,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("X".equals(b3) && "X".equals(b5) && "X".equals(b7)) {
 
@@ -174,6 +184,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player X Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         // end player x --------------------------------------------------------------------------------------
         //player o -------------------------------------------------------------------------------------------
@@ -189,9 +200,9 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b4) && "O".equals(b5) && "O".equals(b6)) {
-
             ocount++;
             gamescore();
 
@@ -202,6 +213,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b7) && "O".equals(b8) && "O".equals(b9)) {
 
@@ -215,6 +227,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b1) && "O".equals(b4) && "O".equals(b7)) {
             ocount++;
@@ -227,6 +240,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b2) && "O".equals(b5) && "O".equals(b8)) {
 
@@ -240,6 +254,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b3) && "O".equals(b6) && "O".equals(b9)) {
 
@@ -253,6 +268,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b1) && "O".equals(b5) && "O".equals(b9)) {
 
@@ -266,6 +282,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         if ("O".equals(b3) && "O".equals(b5) && "O".equals(b7)) {
 
@@ -279,15 +296,17 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Player O Win", "Play with brain and mind",
                     JOptionPane.INFORMATION_MESSAGE);
             clear();
+            return;
         }
         // end player o -----------------------------------------------------------------------------------------
+        if (click_count == 9) {
+            JOptionPane.showMessageDialog(this, "The game is draw\nPlay again", "Play with brain and mind",
+                    JOptionPane.INFORMATION_MESSAGE);
+            gamescore();
+            clear();
+        }
     }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -547,6 +566,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
 
     private void t9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t9ActionPerformed
         // TODO add your handling code here:
+        click_count++;
         t9.setText(stgame);
         if (stgame.equalsIgnoreCase("X")) {
             t9.setForeground(Color.RED);
@@ -565,6 +585,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
                 "Play with brain and mind", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
             xcount = 0;
             ocount = 0;
+            clear();
             gamescore();
         }
     }//GEN-LAST:event_resetActionPerformed
@@ -574,6 +595,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
         JFrame frame = new JFrame("Exit");
         if (JOptionPane.showConfirmDialog(frame, "Confirm you want exit?",
                 "Play with brain and mind", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            clear();
             System.exit(0);
         }
     }//GEN-LAST:event_exitActionPerformed
@@ -581,6 +603,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
         // TODO add your handling code here:
         t2.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t2.setForeground(Color.RED);
         } else {
@@ -593,6 +616,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
         // TODO add your handling code here:
         t1.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t1.setForeground(Color.RED);
         } else {
@@ -605,6 +629,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t3ActionPerformed
         // TODO add your handling code here:
         t3.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t3.setForeground(Color.RED);
         } else {
@@ -617,6 +642,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t4ActionPerformed
         // TODO add your handling code here:
         t4.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t4.setForeground(Color.RED);
         } else {
@@ -629,6 +655,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
         // TODO add your handling code here:
         t5.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t5.setForeground(Color.RED);
         } else {
@@ -641,6 +668,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t6ActionPerformed
         // TODO add your handling code here:
         t6.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t6.setForeground(Color.RED);
         } else {
@@ -653,6 +681,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t7ActionPerformed
         // TODO add your handling code here:
         t7.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t7.setForeground(Color.RED);
         } else {
@@ -665,6 +694,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     private void t8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t8ActionPerformed
         // TODO add your handling code here:
         t8.setText(stgame);
+        click_count++;
         if (stgame.equalsIgnoreCase("X")) {
             t8.setForeground(Color.RED);
         } else {
@@ -674,9 +704,6 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
         winingGame();
     }//GEN-LAST:event_t8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -689,7 +716,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Tic_Tac_Toe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
